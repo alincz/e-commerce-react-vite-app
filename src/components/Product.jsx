@@ -2,8 +2,12 @@
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import { BsPlus, BsEyeFill } from "react-icons/bs";
+import { CartContext } from "../contexts/CartContext";
+import { useContext } from "react";
 const Product = ({ product }) => {
-  console.log(product);
+ const {addToCart} = useContext(CartContext)
+  
+  
   //destructure product
   const { id, image, category, title, price } = product; //astea sunt date din api
   return (
@@ -22,7 +26,7 @@ const Product = ({ product }) => {
         </div>
         {/* Al-2lea e strict pentru butoane */}
         <div className="absolute top-6 right-11 group-hover:right-5 p-2 flex flex-col items-center justify-center gap-y-2 opacity-0 group-hover:opacity-100 transition-all duration-300">
-          <button>
+          <button onClick={() => addToCart(product,id)}> {/**acest id este luat din CartContext unde am creat functia */}
             <div className="flex justify-center items-center text-white w-12 h-12 bg-red-500">
               <BsPlus className="text-3xl" />
             </div>
@@ -47,7 +51,13 @@ const Product = ({ product }) => {
   );
 };
 Product.propTypes = {
-  product: PropTypes.node.isRequired,
+  product: PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    image: PropTypes.string.isRequired,
+    category: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+    price: PropTypes.number.isRequired,
+  }).isRequired,
 };
 
 export default Product;
