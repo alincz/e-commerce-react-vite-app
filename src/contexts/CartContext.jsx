@@ -7,7 +7,7 @@ export const CartContext = createContext();
 
 const CartProvider = ({ children }) => {
   const [cart, setCart] = useState([]);
-
+  //add to cart
   const addToCart = (product, id) => {
     const newItem = { ...product, amount: 1 };
     //verific daca produsul este deja in cos
@@ -29,9 +29,20 @@ const CartProvider = ({ children }) => {
     }
   };
 
-  console.log(cart)
+  //remove from cart
+
+  const removeFromCart = (id) => {
+    const newCart = cart.filter((item) => {
+      return item.id !== id;
+    });
+    setCart(newCart);
+  };
+
+  console.log(cart);
   return (
-    <CartContext.Provider value={{cart, addToCart}}>{children}</CartContext.Provider>
+    <CartContext.Provider value={{ cart, addToCart, removeFromCart }}>
+      {children}
+    </CartContext.Provider>
   );
 };
 
