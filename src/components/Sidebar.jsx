@@ -6,6 +6,7 @@ import { SidebarContext } from "../contexts/SidebarContext";
 import { useContext } from "react";
 import { IoMdArrowForward } from 'react-icons/io';
 import { CartContext } from "../contexts/CartContext";
+import { FiTrash2 } from 'react-icons/fi';
 
 const Sidebar = () => {
   const { isOpen, handleClose } = useContext(SidebarContext);
@@ -26,6 +27,16 @@ const{cart} = useContext(CartContext)
     <div>{cart.map((item) => { //aici mapez peste cart care este componenta din useEffectul din CartContext,ea contine datele fiecarui produs pe care dai click sa il adaugi in cos,cand dau click pe plus mi-l adauga automat in sidebar(am facut lift state up,am luat stateul din CartContext si m am folosit de el aici cu ajutorul lui useContext)
       return <CartItem item={item} key={item.id}/>
     })}</div>
+    <div>
+      <div>
+      {/* total */}
+        <div>
+        <span>Total: </span>$ 100 
+        </div>
+        {/* clear cart icon*/}
+        <div><FiTrash2/></div>
+      </div>
+    </div>
     </div>
   );
 };
