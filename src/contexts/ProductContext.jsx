@@ -23,8 +23,4 @@ ProductProvider.propTypes={
 export default ProductProvider;
 
 
-//Aici facem fetch-ul catre API, folosesc createContext ca sa iau datele din aceasta componenta 
-//si sa le pot folosi in altele.
-//cu ajutorul providerului pot face lucrul asta pentru ca ia datele din interiorul componentei
-//ii atribui o valoare custome (value) si ii pun in interiorul ei "products"-din useState care are
-//in interiorul ei datele din API
+
