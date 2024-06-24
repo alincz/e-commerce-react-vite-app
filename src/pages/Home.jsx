@@ -3,14 +3,8 @@ import { ProductContext } from "../contexts/ProductContext";
 import Product from "../components/Product";
 import Hero from "../components/Hero";
 const Home = () => {
-  //get products from product context
 
-  const { products } = useContext(ProductContext); //aici fac destructurare de obiecte
-  //prin metoda asta{products}-ea se afla in interiorul comp ProductContext
-  //ma folosesc de useContext ca sa iau datele din ProductContext
-  //cu metoda filter,filtram datele din API ca sa imi returneze doar 2 categorii
-  //si cu map le randez pe ecran
-
+  const { products } = useContext(ProductContext); 
   const filteredProducts = products.filter((item) => {
     return (
       item.category === "men's clothing" || item.category === "women's clothing"
