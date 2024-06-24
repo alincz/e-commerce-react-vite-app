@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { ProductContext } from "../contexts/ProductContext";
 import Product from "../components/Product";
+import Hero from "../components/Hero";
 const Home = () => {
   //get products from product context
 
@@ -18,6 +19,7 @@ const Home = () => {
   console.log(filteredProducts);
   return (
     <div>
+      <Hero />
       <section className="py-16">
         <div className="container mx-auto">
           <div

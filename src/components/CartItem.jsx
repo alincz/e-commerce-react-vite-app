@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { IoMdClose, IoMdAdd, IoMdRemove } from "react-icons/io";
 import { CartContext } from "../contexts/CartContext";
 import { useContext } from "react";
+import { DiVim } from "react-icons/di";
 const CartItem = ({ item }) => {
   const { removeFromCart, increaseAmount, decreaseAmount } = useContext(CartContext);
 
@@ -62,6 +63,14 @@ const CartItem = ({ item }) => {
         </div>
       </div>
     </div>
+    // <div>
+    //   <div className="w-full min-h-[150px] flex items-center gap-x-4">
+    //   {/* image */}
+    //     <div>
+    //       <img src={image} alt="" />
+    //     </div>
+    //   </div>
+    // </div>
   );
 };
 
