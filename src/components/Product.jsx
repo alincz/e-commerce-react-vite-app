@@ -1,4 +1,4 @@
-// import { useContext } from "react"
+
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import { BsPlus, BsEyeFill } from "react-icons/bs";
@@ -7,14 +7,10 @@ import { useContext } from "react";
 const Product = ({ product }) => {
  const {addToCart} = useContext(CartContext)
   
-  
-  //destructure product
-  const { id, image, category, title, price } = product; //astea sunt date din api
+  const { id, image, category, title, price } = product; 
   return (
     <div>
-      {/* Primul div e strict pt imagini */}
       <div className="border border-[#e4e4e4] h-[300px] mb-4 relative overflow-hidden group transition">
-        {/* Asta e pt imagini */}
         <div className="w-full h-full flex justify-center items-center ">
           <div className="w-[200px] mx-auto flex justify-center items-center">
             <img
@@ -24,9 +20,8 @@ const Product = ({ product }) => {
             />
           </div>
         </div>
-        {/* Al-2lea e strict pentru butoane */}
         <div className="absolute top-6 right-11 group-hover:right-5 p-2 flex flex-col items-center justify-center gap-y-2 opacity-0 group-hover:opacity-100 transition-all duration-300">
-          <button onClick={() => addToCart(product,id)}> {/**acest id este luat din CartContext unde am creat functia */}
+          <button onClick={() => addToCart(product,id)}> 
             <div className="flex justify-center items-center text-white w-12 h-12 bg-red-500">
               <BsPlus className="text-3xl" />
             </div>
@@ -39,7 +34,7 @@ const Product = ({ product }) => {
           </Link>
         </div>
       </div>
-      {/* category,title ,price*/}
+    
       <div>
         <div className="text-sm capitalize text-gray-500 mb-1">{category}</div>
         <Link to={`/product/${id}`}>
