@@ -53,6 +53,3 @@ const ProductDetails = () => {
 
 export default ProductDetails;
 
-// De ce am folosit useParams:
-// 1.Accesarea parametrilor de rută: useParams este un hook din react-router-dom care îți permite să accesezi parametrii din URL. În configurarea rutei din App, ai definit o rută /product/:id, unde :id este un parametru dinamic. Când utilizatorul navighează la un URL de tipul /product/123, id va fi 123.
-// 2.Extrage valoarea parametrului: În componenta ProductDetails, apelezi useParams pentru a extrage valoarea parametrului id din URL. Asta îți permite să folosești această valoare pentru a afișa informații specifice despre produsul cu acel id.
