@@ -9,7 +9,7 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 function App() {
   return (
     <div className="overflow-hidden">
-      {/* aici am facut partea de routing si am declarat si restul componentelor */}
+    
       <Router>
         <Header />
         <Routes>
