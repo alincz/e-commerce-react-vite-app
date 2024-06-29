@@ -18,7 +18,7 @@ useEffect(() => {
     return accumulator + currentItem.price * currentItem.amount
   }, 0)
   setTotal(total)
-})
+}, [cart])
 
 
   //update item amount
