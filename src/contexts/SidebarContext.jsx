@@ -1,11 +1,9 @@
 import { useState, createContext } from "react";
 import PropTypes from 'prop-types';
 
-//create context
 const SidebarContext = createContext();
 
 const SidebarProvider = ({ children }) => {
-  //sidebar state
   const [isOpen, setIsOpen] = useState(false);
 
   const handleClose = () => {
